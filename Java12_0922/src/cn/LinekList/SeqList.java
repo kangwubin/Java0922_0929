@@ -48,7 +48,11 @@ public class SeqList {
     //扩容方法
     private void realloc(){
         //扩容策略根据实际问题场景的特点来决定具体是线性增长还是指数增长；让扩容的次数尽量少
+<<<<<<< HEAD
         int[] newData = new int[this.data.length * 2];
+=======
+        int[] newData=new int[this.data.length * 2];
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
         for (int i = 0; i <this.data.length ; i++) {
             newData[i] = this.data[i];
         }
@@ -68,7 +72,11 @@ public class SeqList {
 
     // 查找某个元素对应的位置
     public int search(int toFind) {
+<<<<<<< HEAD
         for (int i = 0;i < this.size;i++){
+=======
+        for (int i=0;i < this.size;i++){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             if (this.data[i] == toFind){
                 return i;
             }
@@ -102,7 +110,11 @@ public class SeqList {
         }
         //删除普通位置，需要搬运
         for (int i = pos; i < size - 1 ; i++) {
+<<<<<<< HEAD
             this.data[i] = this.data[i+1];
+=======
+            this.data[i]=this.data[i+1];
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
         }
         this.size--;
     }

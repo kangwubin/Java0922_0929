@@ -23,20 +23,31 @@ public class LinkedList {
     public void addFirst(int elem){
         //先创建一个节点，这个节点的值为elem
         LinkedNode node = new LinkedNode(elem);
+<<<<<<< HEAD
         if (this.head == null){
             this.head = node;
+=======
+        if (this.head==null){
+            this.head=node;
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return;
         }
         //如果不是空节点，就需要把新的节点放到链表的开始位置;node为新节点
 //        node.setNext(head);
+<<<<<<< HEAD
         node.next = head;
         this.head = node;
+=======
+        node.next=head;
+        this.head=node;
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
         return;
     }
 
     //尾插法---O(N)
     public void addLast(int elem){
         //创建节点
+<<<<<<< HEAD
         LinkedNode node = new LinkedNode(elem);
         //如果是空链表，直接把这个节点放上去
         if (this.head == null){
@@ -51,15 +62,38 @@ public class LinkedList {
         }
         //循环结束，cur指向最后一个节点
         cur.next = node;
+=======
+        LinkedNode node=new LinkedNode(elem);
+        //如果是空链表，直接把这个节点放上去
+        if (this.head==null){
+            this.head=node;
+            return;
+        }
+        //非空，需要先找到最后一个节点
+        LinkedNode cur=this.head;
+        //这个循环结束，cur就是最后一个节点
+        while (cur.next!=null){
+            cur=cur.next;
+        }
+        //循环结束，cur指向最后一个节点
+        cur.next=node;
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
     }
 
     //任意位置插入,第一个数据节点为0号下标---O(N)
     public void addIndex(int index,int elem){
         //创建节点
+<<<<<<< HEAD
         LinkedNode node = new LinkedNode(elem);
         //先进行合法校验，需要知道链表的长度
         int len = size();
         if (index < 0 || index > len){
+=======
+        LinkedNode node=new LinkedNode(elem);
+        //先进行合法校验，需要知道链表的长度
+        int len=size();
+        if (index < 0 || index >len){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return;
         }
         //处理头插
@@ -75,24 +109,42 @@ public class LinkedList {
         }
         //插入到中间位置
         //prev这个引用就对应index-1的位置
+<<<<<<< HEAD
         LinkedNode prev = getIndexPos(index-1);
         //具体插入
         node.next = prev.next;
         prev.next = node;
+=======
+        LinkedNode prev=getIndexPos(index-1);
+        //具体插入
+        node.next=prev.next;
+        prev.next=node;
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
     }
 
     private LinkedNode getIndexPos(int index){
         //是否要判断index是在有效范围呢？
+<<<<<<< HEAD
         LinkedNode cur = this.head;
         for (int i = 0; i < index ; i++) {
             cur = cur.next;
+=======
+        LinkedNode cur=this.head;
+        for (int i = 0; i < index ; i++) {
+            cur=cur.next;
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
         }
         return cur;
     }
     //获取链表的长度
     public int size(){
+<<<<<<< HEAD
         int size = 0;
         for (LinkedNode cur = this.head;cur != null;cur = cur.next){
+=======
+        int size=0;
+        for (LinkedNode cur=this.head;cur!=null;cur=cur.next){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             size++;
         }
         return size;
@@ -100,8 +152,13 @@ public class LinkedList {
 
     //查找是否包含关键字key是否在单链表当中---O(N)
     public boolean contains(int toFind){
+<<<<<<< HEAD
         for (LinkedNode cur = this.head;cur != null;cur = cur.next){
             if (cur.data == toFind){
+=======
+        for (LinkedNode cur=this.head;cur!=null;cur=cur.next){
+            if (cur.data==toFind){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
                 return true;
             }
         }
@@ -112,12 +169,20 @@ public class LinkedList {
     public void remove(int toRemove){
         //核心是要找到要删除元素的前一个位置；特殊情况：
         //1.先单独处理空链表
+<<<<<<< HEAD
         if (head == null){
+=======
+        if (head==null){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return;
         }
         //2.先考虑是否要删除的是头结点
         if (head.data == toRemove){
+<<<<<<< HEAD
             this.head = this.head.next;      //
+=======
+            this.head=this.head.next;      //
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return;
         }
         //3.删除中间节点：找到要删除节点的前一个节点
@@ -133,7 +198,11 @@ public class LinkedList {
     //删除所有值为key的节点---O(N)
     public void removeAllKey(int toRemove){
         //判断是否为空
+<<<<<<< HEAD
         if (head == null){
+=======
+        if (head==null){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return;
         }
         //先处理后续节点，最后处理头节点
@@ -144,7 +213,11 @@ public class LinkedList {
             if (cur.data == toRemove){
             //cur对应的节点就应该删掉
                 prev.next = cur.next;   //删除cur指向的节点
+<<<<<<< HEAD
                 cur = prev.next;          //让cur指向prev的下一个节点
+=======
+                cur=prev.next;          //让cur指向prev的下一个节点
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             }else {
                 //cur对应的节点不用删
                 prev = cur;
@@ -160,6 +233,7 @@ public class LinkedList {
 
     private LinkedNode searchPrev(int toRemove){
         //判断是否为空
+<<<<<<< HEAD
         if (this.head == null){
             return null;
         }
@@ -167,6 +241,15 @@ public class LinkedList {
         LinkedNode prev = this.head;
         while (prev.next != null){
             if (prev.next.data == toRemove){
+=======
+        if (this.head==null){
+            return null;
+        }
+        //找到要删除元素的前一个位置
+        LinkedNode prev=this.head;
+        while (prev.next!=null){
+            if (prev.next.data==toRemove){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
                 return prev;
             }
             prev=prev.next;

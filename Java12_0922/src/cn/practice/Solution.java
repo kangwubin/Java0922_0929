@@ -4,6 +4,7 @@ public class Solution {
     //1.删除链表中等于给定值 **val** 的所有节点。
     public ListNode removeElements(ListNode head, int val) {
         //判断是否为空
+<<<<<<< HEAD
         if(head == null){
             return null;
         }
@@ -15,6 +16,19 @@ public class Solution {
                 //要删除的节点
                 prev.next = cur.next;
                 cur = prev.next;
+=======
+        if(head==null){
+            return null;
+        }
+        //1.先删除非头节点
+        ListNode prev=head;
+        ListNode cur=head.next;
+        while(cur != null){
+            if(cur.val==val){
+                //要删除的节点
+                prev.next=cur.next;
+                cur=prev.next;
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             }else{
                 //cur对应的节点不用删
                 prev = cur;
@@ -28,10 +42,17 @@ public class Solution {
         return head;
     }
 
+<<<<<<< HEAD
     //2.反转一个单链表=链表匿置(重点)
     public ListNode reverseList(ListNode head) {
         //对于空链表，不需要任何处理
         if (head == null){
+=======
+    //2.反转一个单链表(重点)
+    public ListNode reverseList(ListNode head) {
+        //对于空链表，不需要任何处理
+        if(head == null){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return null;
         }
         //对于只有一个元素的列表，也不要处理
@@ -45,10 +66,18 @@ public class Solution {
         while (cur != null){
             ListNode next = cur.next;
             if (next == null){
+<<<<<<< HEAD
                 //cur指向最后一个节点了
                 newHead = cur;
             }
             cur.next = prev;
+=======
+               newHead = cur;
+            }
+            //翻转指针的指向
+            cur.next = prev;
+            //更新prev和cur
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             prev = cur;
             cur = next;
         }
@@ -58,10 +87,17 @@ public class Solution {
     //3.给定一个带有头结点head的非空单链表，返回链表的中间结点。如果有两个中间结点，则返回第二个中间结点。
     public ListNode middleNode(ListNode head) {
         //得到链表的长度
+<<<<<<< HEAD
           int steps = size(head) / 2;
          //根据长度的一半移动cur
         ListNode cur = head;
         for (int i = 0;i < steps;i++){
+=======
+         int steps = size(head) / 2;
+         //根据长度的一半移动cur
+        ListNode cur = head;
+        for (int i = 0; i < steps; i++) {
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             cur = cur.next;
         }
         return cur;
@@ -81,7 +117,11 @@ public class Solution {
     public ListNode FindKthToTail(ListNode head,int k) {
         int length = size(head);
         //判断是否非法
+<<<<<<< HEAD
         if (head == null || k <= 0 || k >length){
+=======
+        if (head == null || k <= 0 || k >length ){
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
             return null;
         }
         //用（length - k)即为从前往后数第几个，然后让指针从前往后走几步
@@ -93,6 +133,7 @@ public class Solution {
         return cur;
     }
 
+<<<<<<< HEAD
     //5.将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。(重点)
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         //判断为空
@@ -334,5 +375,11 @@ public class Solution {
         }
         return cur1;
     }
+=======
+    //5.将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+//    public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+//
+//    }
+>>>>>>> c7a46d79baca0b7e2ab1778f9734db5fd59379a3
 
 }
